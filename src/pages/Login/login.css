@@ -1,0 +1,237 @@
+/* Full screen background
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Box for login form */
+/* .login-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 300px;
+} */
+
+/* Inputs */
+/* .login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 6px;
+} */
+
+/* Button */
+/* .login-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #1c86ee;
+} */
+
+/* Message below form */
+/* .login-message {
+  margin-top: 15px;
+  font-weight: bold;
+}  */
+
+.auth__page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: var(--extra-light);
+}
+
+.auth__container {
+  max-width: var(--max-width);
+  width: 100%;
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.auth__content {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.auth__content .section__header {
+  margin-bottom: 1rem;
+}
+
+.auth__subtitle {
+  margin-bottom: 3rem;
+  color: var(--text-light);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Form Styling */
+.auth__form {
+  width: 100%;
+}
+
+.auth__input__group {
+  margin-bottom: 1.5rem;
+}
+
+.auth__input__group input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  outline: none;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--text-light);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth__input__group input:focus {
+  border-bottom-color: var(--text-dark);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.auth__input__group input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.auth__btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth__btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.auth__btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.auth__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Switch Link */
+.auth__switch {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.auth__switch a {
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth__switch a:hover {
+  color: var(--text-light);
+}
+
+/* Back Link */
+.auth__back {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-align: center;
+  width: 100%;
+}
+
+.auth__back:hover {
+  color: var(--text-dark);
+}
+
+/* Image Section */
+.auth__image {
+  display: none;
+}
+
+/* Tablet & Desktop */
+@media (width > 768px) {
+  .auth__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .auth__content {
+    margin: 0;
+  }
+
+  .auth__content .section__header {
+    text-align: left;
+    margin-inline-start: unset;
+  }
+
+  .auth__subtitle {
+    text-align: left;
+  }
+
+  .auth__switch {
+    text-align: left;
+  }
+
+  .auth__back {
+    text-align: left;
+  }
+
+  .auth__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth__image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (width > 1024px) {
+  .auth__image img {
+    max-width: 500px;
+  }
+}

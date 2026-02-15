@@ -1,0 +1,42 @@
+.blog__container .section__header {
+  margin-bottom: 4rem;
+}
+
+.blog__grid {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 3rem 2rem;
+}
+
+.blog__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.blog__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-family: var(--header-font);
+}
+
+.blog__card p {
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.blog__btn {
+  text-align: center;
+}
+
+@media (width > 768px) {
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__btn {
+    text-align: left;
+  }
+}

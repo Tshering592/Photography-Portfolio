@@ -1,0 +1,135 @@
+/* .portfolio__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.portfolio__grid > div {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (width > 540px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: 1/3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: unset;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width > 1024px) {
+  .portfolio__grid,
+  .portfolio__grid > div {
+    gap: 1.5rem;
+  }
+} */
+
+.portfolio__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.portfolio__grid > div {
+  display: grid;
+  gap: 1rem;
+}
+
+/* View More Button Container */
+.portfolio__btn__container {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.portfolio__toggle__btn {
+  padding: 1rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio__toggle__btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.portfolio__toggle__btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.portfolio__toggle__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transition for grid expansion */
+.portfolio__grid {
+  transition: all 0.4s ease;
+}
+
+.portfolio__grid.expanded {
+  animation: expandGrid 0.4s ease;
+}
+
+@keyframes expandGrid {
+  from {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (width > 540px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: 1/3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: unset;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width > 1024px) {
+  .portfolio__grid,
+  .portfolio__grid > div {
+    gap: 1.5rem;
+  }
+}

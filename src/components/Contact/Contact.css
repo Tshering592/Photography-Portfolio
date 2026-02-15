@@ -1,0 +1,149 @@
+.contact {
+  background-color: var(--extra-light);
+  position: relative;
+}
+
+.contact__container {
+  padding-block: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.contact__content {
+  padding-block: 5rem;
+}
+
+.contact__content .section__header {
+  margin-bottom: 2rem;
+}
+
+.contact__content p {
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ===== UPGRADED INPUT STYLING ===== */
+.contact__content input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--text-light);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Focus State - Better highlight */
+.contact__content input:focus {
+  border-bottom-color: var(--text-dark);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Placeholder styling */
+.contact__content input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.contact__content input:focus::placeholder {
+  opacity: 0.4;
+}
+
+/* Better button styling */
+.contact__content .btn {
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact__content .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.contact__content .btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact__content .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact__content .btn:active {
+  transform: translateY(-1px);
+}
+
+.contact__image {
+  display: none;
+}
+
+@media (width > 540px) {
+  .input__row {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+@media (width > 768px) {
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__content .section__header {
+    margin-inline-start: unset;
+  }
+
+  .contact__content p {
+    text-align: left;
+  }
+
+  /* ===== THE IMAGE "FLOATING" EFFECT ===== */
+  .contact__image {
+    display: flex;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .contact__image img {
+    position: absolute;
+    bottom: 0; /* THIS CREATES THE OVERLAP - extends below section */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease;
+  }
+
+  /* Subtle hover effect on image */
+  .contact__image:hover img {
+    transform: translateX(-50%) scale(1.02);
+  }
+}
+
+@media (width > 1024px) {
+  .contact__image img {
+    max-width: 500px;
+    bottom: -6rem; /* Extends even more on larger screens */
+  }
+}

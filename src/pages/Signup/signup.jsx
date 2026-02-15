@@ -104,7 +104,7 @@ const Signup = () => {
         </div>
 
         <div className="auth__image">
-          <img src="/assets/about.png" alt="signup" />
+          <img src="/assets/CapTshering.png" alt="signup" />
         </div>
       </div>
     </div>

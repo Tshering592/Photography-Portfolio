@@ -74,15 +74,40 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+    
+  //   // Store user info in localStorage (simple auth simulation)
+  //   localStorage.setItem('isAuthenticated', 'true');
+  //   localStorage.setItem('userName', formData.email.split('@')[0]);
+    
+  //   // Navigate to dashboard
+  //   navigate('/dashboard');
+  // };
+
+const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Store user info in localStorage (simple auth simulation)
-    localStorage.setItem('isAuthenticated', 'true');
-    localStorage.setItem('userName', formData.email.split('@')[0]);
-    
-    // Navigate to dashboard
-    navigate('/dashboard');
+    try {
+      const response = await fetch('http://localhost:8000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('isAuthenticated', 'true');
+        localStorage.setItem('userName', data.userName);
+        navigate('/dashboard');
+      } else {
+        alert(data.message); // "Invalid credentials"
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server is not running");
+    }
   };
 
   return (

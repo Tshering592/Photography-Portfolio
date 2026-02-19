@@ -18,21 +18,55 @@ const Signup = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+    
+  //   // Basic validation
+  //   if (formData.password !== formData.confirmPassword) {
+  //     alert('Passwords do not match!');
+  //     return;
+  //   }
+
+  //   // Store user info in localStorage (simple auth simulation)
+  //   localStorage.setItem('isAuthenticated', 'true');
+  //   localStorage.setItem('userName', formData.name);
+    
+  //   // Navigate to dashboard
+  //   navigate('/dashboard');
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Basic validation
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
 
-    // Store user info in localStorage (simple auth simulation)
-    localStorage.setItem('isAuthenticated', 'true');
-    localStorage.setItem('userName', formData.name);
-    
-    // Navigate to dashboard
-    navigate('/dashboard');
+    try {
+      const response = await fetch('http://localhost:8000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            confirmPassword: formData.confirmPassword
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registration Successful! Please Login.");
+        navigate('/login');
+      } else {
+        alert(data.message || "Registration failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server error");
+    }
   };
 
   return (

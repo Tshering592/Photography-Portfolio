@@ -100,6 +100,7 @@ const handleSubmit = async (e) => {
       if (response.ok) {
         localStorage.setItem('isAuthenticated', 'true');
         localStorage.setItem('userName', data.userName);
+        localStorage.setItem('userEmail', formData.email);
         navigate('/dashboard');
       } else {
         alert(data.message); // "Invalid credentials"

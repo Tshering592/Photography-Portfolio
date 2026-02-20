@@ -145,6 +145,54 @@
   font-size: 1.1rem;
 }
 
+/* Admin Table Styling */
+.dashboard__user__list {
+  margin-top: 3rem;
+  background: var(--extra-light); /* Or your primary background color */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.user__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.user__table th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.user__table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  color: var(--text-light);
+}
+
+.action__btns {
+  display: flex;
+  gap: 10px;
+}
+
+.edit__btn {
+  background-color: #4caf50; /* Green */
+  padding: 5px 10px;
+}
+
+.delete__btn {
+  background-color: #e74c3c; /* Red */
+  padding: 5px 10px;
+}
+
+.btn i {
+  font-size: 1.2rem;
+  color: white;
+}
+
 /* Actions */
 .dashboard__actions {
   text-align: center;
